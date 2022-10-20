@@ -23,6 +23,13 @@ html{
     color:var(--darkColor);
 }
 
+.bg-bk{
+    background-color: var(--blackColor);
+}
+.bg-form{
+    background-color: #141D30;
+}
+
 .fh-l{
     font-size: 2rem;
 }
@@ -61,4 +68,23 @@ html{
    background-color: var(--bookmarkColor);
    color:#fff;
 }
+
+.w-30{
+    width:30%;
+}
+
+.form-control{
+    background-color: transparent;
+    border:none;
+    border-radius: 0;
+    border-bottom:1px solid var(--secondaryColor);
+}
+
+
+.form-control::placeholder{
+    font-size: .9375rem;
+    color:#888E98
+}
+
+
 
