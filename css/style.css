@@ -1,0 +1,64 @@
+:root{
+    --mainColor:#FC4747;
+    --blackColor:#10141E;
+    --secondaryColor:#5A698F;
+    --darkColor:#161D2F;
+    --bookmarkColor:#847F6F;
+}
+html{
+    font-size:16px;
+}
+
+.main-color{
+    color:var(--mainColor);
+}
+
+.sec-color{
+    color:var(--secondaryColor);
+}
+.bk-color{
+    color:var(--blackColor);
+}
+.dk-color{
+    color:var(--darkColor);
+}
+
+.fh-l{
+    font-size: 2rem;
+}
+.fh-ml{
+    font-size: 1.5rem;
+}
+.fh-sm{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.fh-xsm{
+    font-weight: bold;
+    font-size:1.125rem;
+}
+
+.fb-ml{
+  font-size: .9375rem;
+}
+
+.fb-sl{
+    font-size: .8125rem;
+  }
+
+.idle-btn{
+    background-color: var(--mainColor);
+    color:#fff;
+}
+
+.idle-btn:hover,.idle-bookmark:hover{
+    background-color: #fff;
+    color:var(--darkColor);
+}
+
+.idle-bookmark,.idle-bookmark:active{
+   background-color: var(--bookmarkColor);
+   color:#fff;
+}
+
