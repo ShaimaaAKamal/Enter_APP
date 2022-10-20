@@ -77,6 +77,7 @@ html{
     background-color: transparent;
     border:none;
     border-radius: 0;
+    color:#fff;
     border-bottom:1px solid var(--secondaryColor);
 }
 
@@ -84,6 +85,13 @@ html{
 .form-control::placeholder{
     font-size: .9375rem;
     color:#888E98
+}
+
+.form-control:focus{
+    border-color: #fff;
+    background-color: transparent;
+    box-shadow: none;
+    color:#fff;
 }
 
 
