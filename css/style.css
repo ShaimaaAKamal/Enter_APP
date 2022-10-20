@@ -69,8 +69,8 @@ html{
    color:#fff;
 }
 
-.w-30{
-    width:30%;
+.signupWidth,.loginWidth{
+    width:90%;
 }
 
 .form-control{
@@ -80,7 +80,6 @@ html{
     color:#fff;
     border-bottom:1px solid var(--secondaryColor);
 }
-
 
 .form-control::placeholder{
     font-size: .9375rem;
@@ -93,6 +92,18 @@ html{
     box-shadow: none;
     color:#fff;
 }
+.linkHover:hover{
+    color:var(--secondaryColor);
+}
+@media screen and (min-width:992px){
+    .signupWidth,.loginWidth{
+        width:50%;
+    }
+}
 
-
+@media screen and (min-width:1200px){
+    .signupWidth,.loginWidth{
+        width:40%;
+    }
+}
 
