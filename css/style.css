@@ -37,7 +37,7 @@ html{
     font-size: 1.5rem;
 }
 .fh-sm{
-    font-size: 1.5rem;
+    font-size: 1.5rem ;
     font-weight: bold;
 }
 
@@ -53,6 +53,9 @@ html{
 .fb-sl{
     font-size: .8125rem;
   }
+.p-7{
+    padding:.7rem 1rem;
+}
 
 .idle-btn{
     background-color: var(--mainColor);
@@ -107,10 +110,29 @@ html{
     border-bottom:1px solid var(--secondaryColor)   !important ;
 }
 
-/* #navImage{
-    width:100%;
-} */
+.bookmark-position{
+    right:1rem;
+    top:1rem;
+}
 
+.heading-position{
+    left:.8rem;
+    bottom:.8rem;
+}
+
+.dotPa::before,.dotPa::after{
+    content: ".";
+    position: absolute;
+    color:white;
+    font-size:.8125rem;;
+    bottom:3px;
+}
+.dotPa::after{
+    left:-10px;
+}
+.dotPa::before{
+    right:-10px;
+}
 @media screen and (min-width:992px){
     .signupWidth,.loginWidth{
         width:50%;
