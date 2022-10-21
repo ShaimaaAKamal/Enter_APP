@@ -76,6 +76,7 @@ html{
 .form-control{
     background-color: transparent;
     border:none;
+    font-weight: lighter;
     border-radius: 0;
     color:#fff;
     border-bottom:1px solid var(--secondaryColor);
@@ -99,6 +100,12 @@ html{
 .aside{
     background-color: #141D30;
 }
+#Search .form-control::placeholder,#Search .form-control{
+    font-size: 1.25rem;
+}
+#Search .form-control:focus{
+    border-bottom:1px solid var(--secondaryColor)   !important ;
+}
 @media screen and (min-width:992px){
     .signupWidth,.loginWidth{
         width:50%;
@@ -107,7 +114,7 @@ html{
 
 @media screen and (min-width:1200px){
     .signupWidth,.loginWidth{
-        width:40%;
+        width:30%;
     }
 }
 
