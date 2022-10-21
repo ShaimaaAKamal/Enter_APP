@@ -71,7 +71,14 @@ html{
    background-color: var(--bookmarkColor);
    color:#fff;
 }
-
+.idle-bookmark svg{
+    fill: none;
+    stroke-width: 1.5;
+    stroke: #fff;
+}
+.idle-bookmark:hover svg{ 
+stroke:var(--darkColor) !important;
+}
 .signupWidth,.loginWidth{
     width:90%;
 }
@@ -116,8 +123,8 @@ html{
 }
 
 .heading-position{
-    left:.8rem;
-    bottom:.8rem;
+    left:.7rem;
+    bottom:.7rem;
 }
 
 .dotPa::before,.dotPa::after{
@@ -133,15 +140,35 @@ html{
 .dotPa::before{
     right:-10px;
 }
+
+.owl-item{
+    width:calc(100%);
+    display: inline-block;
+}
+
+.ow;
+
+@media screen and (min-width:768px){
+    .owl-item img{
+        min-height: 200px;
+        object-fit: cover;
+    }
+}
+
+
+
 @media screen and (min-width:992px){
     .signupWidth,.loginWidth{
         width:50%;
+    }
+    .owl-item img{
+        min-height: 220px;
     }
 }
 
 @media screen and (min-width:1200px){
     .signupWidth,.loginWidth{
         width:30%;
-    }
+    }   
 }
 
