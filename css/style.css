@@ -95,6 +95,10 @@ html{
 .linkHover:hover{
     color:var(--secondaryColor);
 }
+
+.aside{
+    background-color: #141D30;
+}
 @media screen and (min-width:992px){
     .signupWidth,.loginWidth{
         width:50%;
