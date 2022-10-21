@@ -1,7 +1,8 @@
 $('.owl-carousel').owlCarousel({
     margin:10,
+    nav:true,
+    navText : ["<i class='fa fa-chevron-left me-3'></i>","<i class='fa fa-chevron-right'></i>"],
     autoplay:true,
-    dots:true,
     autoplayHoverPause:true,
     smartSpeed: 1500,
     loop: true,
@@ -15,9 +16,6 @@ $('.owl-carousel').owlCarousel({
         },
         992:{
             items:3     
-        },
-        1200:{
-            items:4    
         }
     }
 })
