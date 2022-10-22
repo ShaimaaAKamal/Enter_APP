@@ -156,6 +156,11 @@ stroke:var(--darkColor) !important;
     top:-4.2rem;
 }
 
+.nav-active{
+    fill:#fff !important;
+}
+
+
 
 @media screen and (min-width:768px){
     .owl-item img{
@@ -172,6 +177,10 @@ stroke:var(--darkColor) !important;
     }
     .owl-item img{
         min-height: 220px;
+    }
+
+    aside{
+        height: 95vh;
     }
   
 }
