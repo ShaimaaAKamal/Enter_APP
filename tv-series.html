@@ -3,18 +3,325 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Entertainment web app</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title> Entertainment web app</title>
 </head>
-<body>
+<body class="bg-bk">
+<div class="container-fluid p-4">
+  <div class="row g-3 gx-lg-4">
+    <div class="col-lg-1">
+      <aside class="row bg-form align-items-center py-2 py-lg-4 px-3 px-lg-0  gx-0 justify-content-lg-center justify-content-around rounded-4">
+      <div class=" col-lg-8 col-1">
+        <div class="text-center">
+          <svg width="33" height="27" class="mb-lg-4  me-4 me-lg-0" xmlns="http://www.w3.org/2000/svg">
+            <path d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z" fill="#FC4747"/>
+          </svg>
+        </div>
+      </div>
+      <div class=" col-lg-8 col-9">
+         <div class="d-lg-flex flex-lg-column align-items-lg-center text-center">
+          <svg width="20" height="20" class="mb-lg-3 me-3 me-lg-0" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 0H1C.4 0 0 .4 0 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11H1c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1ZM19 0h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1Zm0 11h-7c-.6 0-1 .4-1 1v7c0 .6.4 1 1 1h7c.6 0 1-.4 1-1v-7c0-.6-.4-1-1-1Z" fill="#5A698F"/>
+          </svg>
+          <svg width="20" height="20" class="mb-lg-3 me-3 me-lg-0" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.956 0H3.044A3.044 3.044 0 0 0 0 3.044v13.912A3.044 3.044 0 0 0 3.044 20h13.912A3.044 3.044 0 0 0 20 16.956V3.044A3.044 3.044 0 0 0 16.956 0ZM4 9H2V7h2v2Zm-2 2h2v2H2v-2Zm16-2h-2V7h2v2Zm-2 2h2v2h-2v-2Zm2-8.26V4h-2V2h1.26a.74.74 0 0 1 .74.74ZM2.74 2H4v2H2V2.74A.74.74 0 0 1 2.74 2ZM2 17.26V16h2v2H2.74a.74.74 0 0 1-.74-.74Zm16 0a.74.74 0 0 1-.74.74H16v-2h2v1.26Z" fill="#5A698F"/>
+          </svg>
+          <svg width="20" height="20" class="mb-lg-3 me-3 me-lg-0" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4.481H9.08l2.7-3.278L10.22 0 7 3.909 3.78.029 2.22 1.203l2.7 3.278H0V20h20V4.481Zm-8 13.58H2V6.42h10v11.64Zm5-3.88h-2v-1.94h2v1.94Zm0-3.88h-2V8.36h2v1.94Z" fill="#fff"/>
+          </svg>
+          <svg width="17" height="20" class="mb-lg-3 me-3 me-lg-0" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.387 0c.202 0 .396.04.581.119.291.115.522.295.694.542.172.247.258.52.258.82v17.038c0 .3-.086.573-.258.82a1.49 1.49 0 0 1-.694.542 1.49 1.49 0 0 1-.581.106c-.423 0-.79-.141-1.098-.423L8.46 13.959l-5.83 5.605c-.317.29-.682.436-1.097.436-.202 0-.396-.04-.581-.119a1.49 1.49 0 0 1-.694-.542A1.402 1.402 0 0 1 0 18.52V1.481c0-.3.086-.573.258-.82A1.49 1.49 0 0 1 .952.119C1.137.039 1.33 0 1.533 0h13.854Z" fill="#5A698F"/>
+          </svg>
+         </div>
+      </div>
+      <div class="col-lg-6 col-1">
+        <div class="text-center">
+          <img src="assets/image-avatar.png " alt="imageAvatar" class="w-100">
+        </div>
+      </div>
+      </aside>
+    </div>
+    <div class="col-lg-11">
+      <main class="py-lg-3  py-2">
+        <section class="input-group mb-3 d-flex align-items-center" id="Search">
+          <span  id="basic-addon1">
+            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+              <path d="M27.613 25.72 23.08 21.2a10.56 10.56 0 0 0 2.253-6.533C25.333 8.776 20.558 4 14.667 4S4 8.776 4 14.667c0 5.89 4.776 10.666 10.667 10.666A10.56 10.56 0 0 0 21.2 23.08l4.52 4.533a1.333 1.333 0 0 0 1.893 0 1.333 1.333 0 0 0 0-1.893ZM6.667 14.667a8 8 0 1 1 16 0 8 8 0 0 1-16 0Z" fill="#FFF"/>
+            </svg>
+          </span>
+          <input type="text" class="form-control border-0" placeholder="Search for TV series" aria-label="Search" aria-describedby="basic-addon1">
+        </section>
+        <section id="Series" class="mt-5">
+          <h3 class="fh-l fw-light text-white mb-4 py-2">TV Series</h3>
+          <div class="row gy-3">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/the-diary/regular/medium.jpg " alt="The diary" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2019</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">The Diary</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/during-the-hunt/regular/medium.jpg" alt="During The Hunt" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2016</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">During The Hunt</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/autosport-the-series/regular/medium.jpg" alt="Autosport The Series" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2016</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">Autosport The Series</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/below-echo/regular/medium.jpg" alt="Below Echo" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2016</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">Below Echo</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/the-rockies/regular/medium.jpg" alt="The Rockies" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2015</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">E</p>
+               </div>
+               <h4 class="text-white fh-xsm">The Rockies</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/community-of-ours/regular/medium.jpg" alt="Community Of The Ours" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2018</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">18+</p>
+               </div>
+               <h4 class="text-white fh-xsm">Community Of The Ours</h4>
+            </div>
+           
+           
+           
 
-  Search for TV series
-  
-  TV Series
-
-  <!-- Display all TV series -->
-  
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/112/regular/medium.jpg" alt="112" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2013</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">112</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/production-line/regular/medium.jpg" alt="Production Line" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2018</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">Production Line</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/dogs/regular/medium.jpg" alt="Dogs" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2016</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">Dogs</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/asia-in-24-days/regular/medium.jpg" alt="Asia In 24 Days" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2020</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">Asia In 24 Days</h4>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/the-tasty-tour/regular/medium.jpg" alt="The Tasty Tour" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2016</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">PG</p>
+               </div>
+               <h4 class="text-white fh-xsm">The Tasty Tour</h4>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="position-relative rounded-3">
+                  <img src="assets/thumbnails/unresolved-cases/regular/medium.jpg" alt="Unresolved Cases" class="w-100 rounded-3">
+                  <div class="rounded-circle  position-absolute p-7 idle-bookmark bookmark-position">
+                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+                    </svg>
+                  </div>
+               </div>
+                <div class="d-flex align-items-center mb-1 text-white fb-sl mt-2 opacity-75">
+                  <p class="mb-0 me-3">2018</p>
+                  <p class="mb-0 d-flex align-items-center me-3 dotPa position-relative">
+                    <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                      <path d="M12 2.689H5.448L7.068.722 6.132 0 4.2 2.345 2.268.017l-.936.705 1.62 1.967H0V12h12V2.689Zm-4.8 8.147h-6V3.853h6v6.983Zm3-2.328H9V7.344h1.2v1.164Zm0-2.328H9V5.016h1.2V6.18Z" fill="#FFF" opacity=".75"/>
+                    </svg>
+                   <span>TV Series</span>
+                   </p>
+                   <p class="mb-0">18+</p>
+               </div>
+               <h4 class="text-white fh-xsm">Unresolved Cases</h4>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
+
