@@ -153,7 +153,7 @@ stroke:var(--darkColor) !important;
     color:#fff;
     position: absolute;
     right:0;
-    top:-4rem;
+    top:-4.2rem;
 }
 
 
@@ -173,6 +173,7 @@ stroke:var(--darkColor) !important;
     .owl-item img{
         min-height: 220px;
     }
+  
 }
 
 @media screen and (min-width:1200px){
