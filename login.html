@@ -17,15 +17,17 @@
             <path d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z" fill="#FC4747"/>
           </svg>
           <div class="bg-form loginWidth mx-auto mt-5 p-5 rounded-4">
+            <div class="alert bg-site text-center text-white mb-3 d-none fb-ml" id="existed">Invalid credientails</div>
+
             <div class="fh-l text-white mb-2">Login</div>
             <div class="mb-4">
-              <input type="email" class="form-control form-control-lg" id="email" placeholder="Email address">
+              <input type="email" class="form-control form-control-lg" id="userEmail" placeholder="Email address">
             </div>
             <div class="mb-4">
-              <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+              <input type="password" class="form-control form-control-lg" id="userPassword" placeholder="Password">
             </div>
             <div class="mb-4 pt-3">
-              <button class="idle-btn w-100  fb-ml py-2">Login to your account</button>
+              <button class="idle-btn w-100  fb-ml py-2" id="loginBtn">Login to your account</button>
             </div>
             <div class="text-white  fb-ml d-flex align-items-center justify-content-center"><p class="mb-0">Don't have an account?</p><a href="sign-up.html" class="main-color text-decoration-none ms-2 linkHover">Sign Up </a></div>
           </div>
@@ -34,6 +36,6 @@
   </div>
 
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js" type="module"></script>
 </body>
-</html>
+</html> 
