@@ -7,37 +7,13 @@ const userPassword=document.querySelector('#userPassword');
 const existed=document.getElementById('existed');
 const users=(localStorage.getItem('users'))?JSON.parse(localStorage.getItem('users')):[];
 
-// function handleSignUp(){ 
-//     if(!existed.classList.contains('d-none'))  existed.classList.add('d-none');
-//     const password=userRegisterPassword.value;
-//     const email=userRegisterEmail.value;
-//     const repeatPassword=userConfirmPassword.value;
-//    if(validation.formValidate(email,password,clearValidInputs,createInvalidMessage,repeatPassword)){
-//       if(confirmPassword(password,repeatPassword))
-//        {
-//          const existedUser= users.filter(user=>user.email === email);
-//          if(existedUser.length === 0){
-//             users.push({
-//                 email,password
-//             });
-//             localStorage.setItem('users',JSON.stringify(users));
-//             clearSignUpForm();
-//          }
-//          else existed.classList.remove('d-none');
-//        }
-//        else{
-//         createInvalidMessage(password,userRegisterPassword,`Password doesn't much`);
-//         createInvalidMessage(repeatPassword,userConfirmPassword,`Password doesn't much`);
-//        } 
-//    }
-// }
 
 
 function handleLogin(){
     if(!existed.classList.contains('d-none'))  existed.classList.add('d-none');
       const password=userPassword.value;
       const email=userEmail.value;
-      if(validation.formValidate(email,password,clearValidInputs,createInvalidMessage)){
+      if(validation.formValidate(userEmail,userPassword,clearValidInputs,createInvalidMessage)){
           console.log('valid');
       }
       else{
