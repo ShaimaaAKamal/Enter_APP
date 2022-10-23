@@ -14,7 +14,6 @@ export class Validation{
           }
          
    formValidate(emailElement,passwordElement,clearValidInputs,createInvalidMessage,...Rest){
-     console.log(Rest);
             const email=emailElement.value;
             const password=passwordElement.value
             const validEmail=this.validateEmail(email);

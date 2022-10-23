@@ -14,10 +14,18 @@ function handleLogin(){
       const password=userPassword.value;
       const email=userEmail.value;
       if(validation.formValidate(userEmail,userPassword,clearValidInputs,createInvalidMessage)){
-          console.log('valid');
-      }
-      else{
-        console.log('invalid');
+        const existedUser= users.find(user=>user.email === email);
+        console.log(existedUser);
+        if(!existedUser){
+            createInvalidMessage(email,userEmail,`This Email isn't exist`);
+         }
+         else{
+             if(existedUser.password !== password) existed.classList.remove('d-none');
+             else{
+
+             }
+         }
+        
       }
 }
 
@@ -28,12 +36,6 @@ function clearValidInputs(element){
     if(element.nextSibling) element.parentNode.removeChild(element.nextSibling);
     element.style.borderColor="#5A698F";
 }
-
-// function clearSignUpForm(){
-//     userConfirmPassword.value="";
-//     userRegisterEmail.value="";
-//     userRegisterPassword.value="";
-// }
 
 
 function createInvalidMessage(value,element,msg){
@@ -57,6 +59,7 @@ userEmail.addEventListener('focus',(e)=>{
 
 
 userPassword.addEventListener('focus',(e)=>{
+    if(!existed.classList.contains('d-none'))  existed.classList.add('d-none');
     clearValidInputs(e.target);
 })
 
