@@ -8,7 +8,7 @@ const userEmail=document.querySelector('#userEmail');
 const userPassword=document.querySelector('#userPassword');
 const existed=document.getElementById('existed');
 const users=(localStorage.getItem('users'))?JSON.parse(localStorage.getItem('users')):[];
-
+let logged=false;
 
 
 function handleLogin(){
@@ -23,12 +23,16 @@ function handleLogin(){
          else{
              if(existedUser.password !== password) existed.classList.remove('d-none');
              else{
-                 console.log('logged')
-             }
+                 logged=true;
+                 localStorage.setItem('logged',logged);
+                 window.location.replace(`index.html`);
+            }
          }
         
       }
 }
+
+
 
 
 loginBtn.addEventListener('click',handleLogin);

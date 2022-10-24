@@ -8,6 +8,18 @@
 html{
     font-size:16px;
 }
+a{
+    text-decoration: none;
+}
+.userIcon,.logoutIcon{
+    padding:.7rem .75rem;
+}
+
+.userIcon:hover,.logoutIcon:hover{
+    background-color: var(--mainColor) !important;
+    color:#fff !important;
+}
+
 
 .main-color{
     color:var(--mainColor);
@@ -173,6 +185,9 @@ stroke:var(--darkColor) !important;
     fill:#fff !important;
 }
 
+.AvaterWidth{
+    width:60%;
+}
 
 
 @media screen and (min-width:768px){
@@ -194,6 +209,10 @@ stroke:var(--darkColor) !important;
 
     aside{
         height: 95vh;
+    }
+
+    .AvaterWidth{
+        width:90%;
     }
   
 }
