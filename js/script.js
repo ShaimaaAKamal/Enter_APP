@@ -4,6 +4,8 @@ const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('log
 const userImage=document.querySelector('#userImage');
 const userIcon=document.querySelector('#userIcon');
 const logoutIcon=document.querySelector('#logoutIcon');
+const bookIcon=document.querySelector('#bookIcon');
+
 const profile=(localStorage.getItem('profile'))?JSON.parse(localStorage.getItem('profile')):false;
 
 
@@ -11,7 +13,7 @@ const profile=(localStorage.getItem('profile'))?JSON.parse(localStorage.getItem(
 
 
 if(logged){
-
+    bookIcon.classList.remove('d-none')
     loggedUser();
     if(profile){
         logoutIcon.classList.remove('d-none');
@@ -23,6 +25,7 @@ if(logged){
     }
 }
 else{
+    bookIcon.classList.add('d-none')
     unloggedUser();
 }
 
