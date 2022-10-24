@@ -1,17 +1,10 @@
 import { data } from "./data.js";
-// import { CreateElemnts } from "./modules/Validation/createElements.js";
-// const createElemnts=new CreateElemnts();
+
 const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
 const userImage=document.querySelector('#userImage');
 const userIcon=document.querySelector('#userIcon');
 const logoutIcon=document.querySelector('#logoutIcon');
 const profile=(localStorage.getItem('profile'))?JSON.parse(localStorage.getItem('profile')):false;
-const movies=data.filter(entry=>entry.category === 'Movie');
-const series=data.filter(entry=>entry.category === 'TV Series');
-// const trending=data.filter(entry=>entry.isTrending === true);
-// const recommended=data.filter(entry=>entry.isTrending !== true);
-// const trendBlock=document.getElementById('trending');
-// const recommendCards=document.getElementById('recommendCards');
 
 
 

@@ -162,6 +162,11 @@ stroke:var(--darkColor) !important;
 .dotPa::after{
     left:-10px;
 }
+
+.bookmarK{
+    height: 40vh;
+    
+}
 .dotPa::before{
     right:-10px;
 }
