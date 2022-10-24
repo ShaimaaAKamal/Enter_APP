@@ -10,7 +10,7 @@ const profile=(localStorage.getItem('profile'))?JSON.parse(localStorage.getItem(
 
 
 
-
+console.log(logged);
 
 if(logged){
     bookIcon.classList.remove('d-none')
