@@ -1,6 +1,11 @@
 import { Validation } from "./modules/Validation/validate.js";
 import { ClearInputs } from "./modules/Validation/clearModule.js";
 
+const authUser=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
+if(authUser){
+    window.location.replace(`index.html`);
+}
+
 const validation=new Validation();
 const clearInputs=new ClearInputs();
 const loginBtn=document.querySelector('#loginBtn');
@@ -8,7 +13,7 @@ const userEmail=document.querySelector('#userEmail');
 const userPassword=document.querySelector('#userPassword');
 const existed=document.getElementById('existed');
 const users=(localStorage.getItem('users'))?JSON.parse(localStorage.getItem('users')):[];
-let logged=false;
+let logged=authUser;
 
 
 function handleLogin(){

@@ -9,6 +9,10 @@ const userPassword=document.querySelector('#userPassword');;
 const userConfirmPassword=document.querySelector('#userConfirmPassword');
 const existed=document.getElementById('existed');
 const users=(localStorage.getItem('users'))?JSON.parse(localStorage.getItem('users')):[];
+const authUser=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
+if(authUser){
+    window.location.replace(`index.html`);
+}
 
 function handleSignUp(){ 
     if(!existed.classList.contains('d-none'))  existed.classList.add('d-none');
