@@ -4,15 +4,14 @@ const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('log
 const userImage=document.querySelector('#userImage');
 const userIcon=document.querySelector('#userIcon');
 const logoutIcon=document.querySelector('#logoutIcon');
-const bookIcon=document.querySelector('#bookIcon');
-
+const bookmarkNavIcon=document.querySelector('#bookIcon');
 const profile=(localStorage.getItem('profile'))?JSON.parse(localStorage.getItem('profile')):false;
 
 
 
 
 if(logged){
-    bookIcon.classList.remove('d-none')
+    bookmarkNavIcon.classList.remove('d-none')
     loggedUser();
     if(profile){
         logoutIcon.classList.remove('d-none');
@@ -24,7 +23,7 @@ if(logged){
     }
 }
 else{
-    bookIcon.classList.add('d-none')
+    bookmarkNavIcon.classList.add('d-none')
     unloggedUser();
 }
 
