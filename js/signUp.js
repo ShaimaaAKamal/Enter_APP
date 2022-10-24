@@ -28,7 +28,8 @@ function handleSignUp(){
                 email,password
             });
             localStorage.setItem('users',JSON.stringify(users));
-            clearInputs.clearSignUpForm();
+            window.location.replace(`login.html`);
+            // clearInputs.clearSignUpForm();
          }
          else existed.classList.remove('d-none');
        }

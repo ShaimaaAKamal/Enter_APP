@@ -10,7 +10,6 @@ const profile=(localStorage.getItem('profile'))?JSON.parse(localStorage.getItem(
 
 
 
-console.log(logged);
 
 if(logged){
     bookIcon.classList.remove('d-none')
@@ -41,6 +40,7 @@ function loggedUser(){
     logoutIcon.addEventListener('click',function(e){
           localStorage.setItem('logged',JSON.stringify(false));
           localStorage.setItem('profile',JSON.stringify(false));
+          localStorage.removeItem('user');
           window.location.replace(`index.html`);
     });
   

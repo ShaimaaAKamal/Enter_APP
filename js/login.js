@@ -29,7 +29,8 @@ function handleLogin(){
              if(existedUser.password !== password) existed.classList.remove('d-none');
              else{
                  logged=true;
-                 localStorage.setItem('logged',logged);
+                 localStorage.setItem('user',JSON.stringify(existedUser));
+                 localStorage.setItem('logged',JSON.stringify(logged));
                  window.location.replace(`index.html`);
             }
          }
