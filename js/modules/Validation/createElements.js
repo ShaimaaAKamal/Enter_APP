@@ -19,7 +19,7 @@ export class CreateElemnts{
     createInfoPart(trend,type){
         const div=document.createElement('div');
         div.classList.add('position-relative', 'rounded-3');
-        div.appendChild(this.createImageElement(trend,'recommend'));
+        div.appendChild(this.createImageElement(trend,type));
         div.appendChild(this.createBookmarked(trend));
         return div;
     }
@@ -50,26 +50,29 @@ export class CreateElemnts{
             <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
           </svg>`;
        
-        // if(trend.isBookmarked){
-        //     div.innerHTML=`<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
-        //     <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" fill="#fff" />
-        //   </svg>`;
-        // }
-        // else{
-            
-        // }
-
-        const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
-        if(logged){
+        const user=localStorage.getItem('user')?JSON.parse(localStorage.getItem('user')):false;
+        if(user){
+            const users=localStorage.getItem('users')?JSON.parse(localStorage.getItem('users')):[];
             if(trend.isBookmarked){
                 div.children[0].children[0].style.fill='#fff';
             }
             div.addEventListener('click',function(){
                 const path=this.children[0].children[0];
+                const trendIndex = user.data.findIndex(function(entry){
+                    return     entry.title=== trend.title
+                 });
                 if(path.style.fill)
-                   path.style.fill=null;
+                   {  path.style.fill=null;
+                    trend.isBookmarked=false;
+                   }
                 else
-                   path.style.fill='#fff';
+                  { path.style.fill='#fff';
+                    trend.isBookmarked=true;
+                   }
+                   user.data[trendIndex]=trend;
+                   localStorage.setItem('user',JSON.stringify(user));
+                   users[user.id-1]=user
+                   localStorage.setItem('users',JSON.stringify(users));
 
         });}
        

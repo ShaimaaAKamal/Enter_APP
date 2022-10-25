@@ -30,13 +30,12 @@ function handleSignUp(){
             });
             localStorage.setItem('users',JSON.stringify(users));
             window.location.replace(`login.html`);
-            // clearInputs.clearSignUpForm();
          }
          else existed.classList.remove('d-none');
        }
        else{
-        createInvalidMessage(password,userPassword,`Password doesn't much`);
-        createInvalidMessage(repeatPassword,userConfirmPassword,`Password doesn't much`);
+        clearInputs.createInvalidMessage(password,userPassword,`Password doesn't much`);
+        clearInputs.createInvalidMessage(repeatPassword,userConfirmPassword,`Password doesn't much`);
        } 
    }
 }
