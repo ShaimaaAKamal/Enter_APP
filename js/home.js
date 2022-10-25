@@ -1,10 +1,20 @@
 import { data } from "./data.js";
 import { CreateElemnts } from "./modules/Validation/createElements.js";
-const trending=data.filter(entry=>entry.isTrending === true);
-const recommended=data.filter(entry=>entry.isTrending !== true);
+
+const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
+let displayedData=[...data];
+let trending, recommended
 const trendBlock=document.getElementById('trending');
 const recommendCards=document.getElementById('recommendCards');
 const createElemnts=new CreateElemnts();
+
+(function (){
+if(logged){
+      displayedData=JSON.parse(localStorage.getItem('user')).data;
+}
+    trending=displayedData.filter(entry=>entry.isTrending === true);
+    recommended=displayedData.filter(entry=>entry.isTrending !== true);
+})();
 
 async function buildTrend(){
     let script = document.createElement('script');

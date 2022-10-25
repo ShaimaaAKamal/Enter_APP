@@ -20,7 +20,7 @@ export class CreateElemnts{
         const div=document.createElement('div');
         div.classList.add('position-relative', 'rounded-3');
         div.appendChild(this.createImageElement(trend,'recommend'));
-        div.appendChild(this.createBookmarked());
+        div.appendChild(this.createBookmarked(trend));
         return div;
     }
 
@@ -42,18 +42,30 @@ export class CreateElemnts{
         return img;
     }
 
-     createBookmarked(){
+     createBookmarked(trend){
         const div=document.createElement('div');
         div.classList.add('rounded-circle','position-absolute','p-7','idle-bookmark','bookmark-position');
-        div.innerHTML=`<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
-                         <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
-                       </svg>`;
+       
+        if(trend.isBookmarked){
+            div.innerHTML=`<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+            <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" fill="#fff" />
+          </svg>`;
+        }
+        else{
+            div.innerHTML=`<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+            <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
+          </svg>`;
+        }
 
         const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
         if(logged){
             div.addEventListener('click',function(){
                 const path=this.children[0].children[0];
-                path.style.fill="#fff";
+                if(path.style.fill)
+                   path.style.fill=null;
+                else
+                   path.style.fill='#fff';
+
         });}
        
         return div;

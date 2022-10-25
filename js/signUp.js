@@ -1,5 +1,6 @@
 import { Validation } from "./modules/Validation/validate.js";
 import { ClearInputs } from "./modules/Validation/clearModule.js";
+import { data } from "./data.js";
 
 const validation=new Validation();
 const clearInputs=new ClearInputs();
@@ -25,7 +26,7 @@ function handleSignUp(){
          const existedUser= users.filter(user=>user.email === email);
          if(existedUser.length === 0){
             users.push({
-                email,password
+                email,password,data,id:users.length+1,type:'regular'
             });
             localStorage.setItem('users',JSON.stringify(users));
             window.location.replace(`login.html`);
