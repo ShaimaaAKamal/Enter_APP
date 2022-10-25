@@ -1,6 +1,8 @@
 import { Validation } from "./modules/Validation/validate.js";
 import { ClearInputs } from "./modules/Validation/clearModule.js";
 
+export function login(){
+
 const authUser=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
 if(authUser){
     window.location.replace(`index.html`);
@@ -54,3 +56,5 @@ userPassword.addEventListener('focus',(e)=>{
     clearInputs.clearValidInputs(e.target);
 })
 
+
+}

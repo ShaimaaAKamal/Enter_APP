@@ -2,6 +2,7 @@ import { Validation } from "./modules/Validation/validate.js";
 import { ClearInputs } from "./modules/Validation/clearModule.js";
 import { data } from "./data.js";
 
+export function signUp(){
 const validation=new Validation();
 const clearInputs=new ClearInputs();
 const signUpBtn=document.querySelector('#signUpBtn');
@@ -40,8 +41,6 @@ function handleSignUp(){
    }
 }
 
-
-
 function confirmPassword(password,confirmPassword){
     return password === confirmPassword;
 }
@@ -61,3 +60,4 @@ userPassword.addEventListener('focus',(e)=>{
 userConfirmPassword.addEventListener('focus',(e)=>{
     clearInputs.clearValidInputs(e.target);
 })
+}

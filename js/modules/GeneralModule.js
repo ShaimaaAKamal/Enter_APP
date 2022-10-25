@@ -26,6 +26,7 @@ export class General{
     const category=wholeData.filter(entry=> entry[key] === searchKey);
     return category;
    }
+
    displayCards(category,parentElement){
     const createElemnts=new CreateElemnts();
     category.forEach(trend => parentElement.appendChild(createElemnts.createRecommend(trend)));

@@ -2,6 +2,8 @@
 import { CreateElemnts } from "./modules/Validation/createElements.js";
 import { General } from "./modules/generalModule.js";
 
+export function displayHome(){
+    
 const trendBlock=document.getElementById('trending');
 const recommendCards=document.getElementById('recommendCards');
 const createElemnts=new CreateElemnts();
@@ -19,3 +21,4 @@ async function buildTrend(){
 buildTrend();
 
 general.displayCards(general.getData('isTrending',false),recommendCards)
+}

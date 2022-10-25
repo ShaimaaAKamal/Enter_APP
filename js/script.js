@@ -1,53 +1,38 @@
-
-const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
-const userImage=document.querySelector('#userImage');
-const userIcon=document.querySelector('#userIcon');
-const logoutIcon=document.querySelector('#logoutIcon');
-const bookmarkNavIcon=document.querySelector('#bookIcon');
-const profile=(localStorage.getItem('profile'))?JSON.parse(localStorage.getItem('profile')):false;
-
-
+import { displayBookmarked } from "./bookmared.js";
+import { displayHome } from "./home.js";
+import { login } from "./login.js";
+import { displayMovies } from "./movies.js";
+import { displaySeries } from "./series.js";
+import { signUp } from "./signUp.js";
+import { checkLogging } from "./checkLogging.js";
 
 
-if(logged){
-    bookmarkNavIcon.classList.remove('d-none')
-    loggedUser();
-    if(profile){
-        logoutIcon.classList.remove('d-none');
-        userImage.classList.add('d-none');
-    }
-    else{
-        logoutIcon.classList.add('d-none');
-        userImage.classList.remove('d-none');
-    }
-}
-else{
-    bookmarkNavIcon.classList.add('d-none')
-    unloggedUser();
-}
+const page=(localStorage.getItem('page'))?JSON.parse(localStorage.getItem('page')):'';
+let check=false;
 
-function loggedUser(){
-    userImage.classList.remove('d-none');
-    userIcon.classList.add('d-none');
-
-    userImage.addEventListener('click',function(e){
-        e.preventDefault();
-        localStorage.setItem('profile',JSON.stringify(true));
-        window.location.replace(`profile.html`);
-    });
-    logoutIcon.addEventListener('click',function(e){
-          localStorage.setItem('logged',JSON.stringify(false));
-          localStorage.setItem('profile',JSON.stringify(false));
-          localStorage.removeItem('user');
-          window.location.replace(`index.html`);
-    });
-  
+switch(page){
+    case 'index': displayHome();
+    check =true;
+    break;
+    case 'series': displaySeries();
+    check =true;
+    break;
+    case 'movies': displayMovies();
+    check =true;
+    break;
+    case 'bookmarked': displayBookmarked();
+    check =true;
+    break;
+    case 'profile':  check =true;;
+    break;
+    case 'signUP': signUp();
+    break;
+    case 'login': login();
+    break;
+    default: break;
 }
 
-function unloggedUser(){
-    userImage.classList.add('d-none');
-    userIcon.classList.remove('d-none');
-    logoutIcon.classList.add('d-none');
-}
+
+if(check)  checkLogging();
 
 

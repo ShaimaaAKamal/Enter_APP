@@ -1,8 +1,7 @@
-// import { data } from "./data.js";
-import { CreateElemnts } from "./modules/Validation/createElements.js";
 import { General } from "./modules/generalModule.js";
 
-const createElemnts=new CreateElemnts();
+export function displayBookmarked(){
+
 const general=new General();
 const emptyBookmarkedElement=document.querySelector('#emptyBookmarked');
 const bookmarkedElement=document.querySelector('#bookmarked');
@@ -44,4 +43,6 @@ if(bookmarked.length !== 0){
 else{
     general.showElement(emptyBookmarkedElement);
     general.hideElement(bookmarkedElement);
+}
+
 }
