@@ -1,29 +1,21 @@
-import { data } from "./data.js";
-import { CreateElemnts } from "./modules/Validation/createElements.js";
 
-const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
-let displayedData=[...data];
-let trending, recommended
+import { CreateElemnts } from "./modules/Validation/createElements.js";
+import { General } from "./modules/generalModule.js";
+
 const trendBlock=document.getElementById('trending');
 const recommendCards=document.getElementById('recommendCards');
 const createElemnts=new CreateElemnts();
+const general=new General();
 
-(function (){
-if(logged){
-      displayedData=JSON.parse(localStorage.getItem('user')).data;
-}
-    trending=displayedData.filter(entry=>entry.isTrending === true);
-    recommended=displayedData.filter(entry=>entry.isTrending !== true);
-})();
 
 async function buildTrend(){
     let script = document.createElement('script');
     script.src = "js/owlCarso.js";
     const trendCarsouel=createElemnts.createCarsouel();
-    await trending.forEach(trend => trendCarsouel.appendChild(createElemnts.createTrendings(trend)));
+    await general.displayTrends(general.getData('isTrending',true),trendCarsouel)
     await trendBlock.appendChild(trendCarsouel);
     document.body.append(script);
 }
 buildTrend();
 
-recommended.forEach(trend => recommendCards.appendChild(createElemnts.createRecommend(trend)));
+general.displayCards(general.getData('isTrending',false),recommendCards)

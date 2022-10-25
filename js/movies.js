@@ -1,6 +1,7 @@
-import { data } from "./data.js";
-import { CreateElemnts } from "./modules/Validation/createElements.js";
-const createElemnts=new CreateElemnts();
-const movies=data.filter(entry=>entry.category === 'Movie');
+import { General } from "./modules/generalModule.js";
+
+const general=new General();
 const moviesCard=document.getElementById('moviesCard');
-movies.forEach(trend => moviesCard.appendChild(createElemnts.createRecommend(trend)));
+
+general.displayCards(general.getData('category','Movie'),moviesCard)
+

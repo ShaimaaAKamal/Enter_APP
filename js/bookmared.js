@@ -1,27 +1,47 @@
-import { data } from "./data.js";
+// import { data } from "./data.js";
 import { CreateElemnts } from "./modules/Validation/createElements.js";
+import { General } from "./modules/generalModule.js";
 
 const createElemnts=new CreateElemnts();
+const general=new General();
 const emptyBookmarkedElement=document.querySelector('#emptyBookmarked');
 const bookmarkedElement=document.querySelector('#bookmarked');
+const bookmarkSeriesParent=document.getElementById('bookmarkSeriesParent');
+const bookmarkMoviesParent=document.getElementById('bookmarkMoviesParent');
 const bookmarkMoviesElement=document.querySelector('#bookmarkMovies');
 const bookmarkSeriesElement=document.querySelector('#bookmarkSeries');
 
-const bookmarked=data.filter(entry=>entry.isBookmarked === true);
+
+const bookmarked=general.getData('isBookmarked',true);
+
 if(bookmarked.length !== 0){
     bookmarkedElement.classList.remove('d-none');
-    emptyBookmarkedElement.classList.add('d-none')    
-    const bookmarkedSeries=bookmarked.filter(entry=>entry.category === 'TV Series');
-    const bookmarkedMovies=bookmarked.filter(entry=>entry.category === 'Movie');
-    if(bookmarkedSeries.lenth !==0){
-        bookmarkedSeries.forEach(trend => bookmarkSeriesElement.appendChild(createElemnts.createRecommend(trend)));
+    emptyBookmarkedElement.classList.add('d-none')  
+
+   
+    const bookmarkedSeries=general.filterData(bookmarked,'category','TV Series');
+    const bookmarkedMovies=general.filterData(bookmarked,'category','Movie')
+
+    if(bookmarkedSeries.length !==0 && bookmarkedMovies.length !==0){
+
+        general.showElement(bookmarkSeriesParent);
+        general.showElement(bookmarkMoviesParent);
+        general.displayCards(bookmarkedSeries,bookmarkSeriesElement);
+        general.displayCards(bookmarkedMovies,bookmarkMoviesElement)
     }
-    if( bookmarkedMovies.lenth !==0){
-        bookmarkedMovies.forEach(trend => bookmarkMoviesElement.appendChild(createElemnts.createRecommend(trend)));
+    else if(bookmarkedMovies.length !==0){
+        general.showElement(bookmarkMoviesParent);
+        general.hideElement(bookmarkSeriesParent);
+        general.displayCards(bookmarkedMovies,bookmarkMoviesElement)
+    }
+    else if(bookmarkedSeries.length !==0){
+        general.showElement(bookmarkSeriesParent);
+        general.hideElement(bookmarkMoviesParent);
+        general.displayCards(bookmarkedSeries,bookmarkSeriesElement);
     }
 
 }
 else{
-    bookmarkedElement.classList.add('d-none');
-    emptyBookmarkedElement.classList.remove('d-none');
+    general.showElement(emptyBookmarkedElement);
+    general.hideElement(bookmarkedElement);
 }

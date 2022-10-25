@@ -1,8 +1,8 @@
-import { data } from "./data.js";
-import { CreateElemnts } from "./modules/Validation/createElements.js";
+import { General } from "./modules/generalModule.js";
 
-const createElemnts=new CreateElemnts();
+
+const general=new General();
 const seriesCards=document.getElementById('seriesCards');
-const series=data.filter(entry=>entry.category === 'TV Series');
 
-series.forEach(trend => seriesCards.appendChild(createElemnts.createRecommend(trend)));
+general.displayCards(general.getData('category','TV Series'),seriesCards)
+
