@@ -45,20 +45,25 @@ export class CreateElemnts{
      createBookmarked(trend){
         const div=document.createElement('div');
         div.classList.add('rounded-circle','position-absolute','p-7','idle-bookmark','bookmark-position');
-       
-        if(trend.isBookmarked){
-            div.innerHTML=`<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
-            <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" fill="#fff" />
-          </svg>`;
-        }
-        else{
-            div.innerHTML=`<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+
+        div.innerHTML=`<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
             <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
           </svg>`;
-        }
+       
+        // if(trend.isBookmarked){
+        //     div.innerHTML=`<svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+        //     <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" fill="#fff" />
+        //   </svg>`;
+        // }
+        // else{
+            
+        // }
 
         const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
         if(logged){
+            if(trend.isBookmarked){
+                div.children[0].children[0].style.fill='#fff';
+            }
             div.addEventListener('click',function(){
                 const path=this.children[0].children[0];
                 if(path.style.fill)
