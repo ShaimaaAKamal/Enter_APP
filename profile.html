@@ -76,17 +76,24 @@
             <main class="py-lg-1  py-2">
               <div class="row">
                  <div class='col-lg-3'>
-                    <div class="bg-form py-3 rounded-3">
-                      <div class="text-center pt-3">
+                    <div class="bg-form text-center py-3 rounded-3">
+                      <div class="pt-3">
                         <img src="assets/image-avatar.png" alt="UserImage" class="me-3 mb-2">
                     </div>
-                    <div id="userName" class="text-white text-center fh-ml mb-2"></div>
-                    <div id="userEmail" class="sec-color text-center fh-xsm fw-light mb-1"></div>
-                    <div id="userType" class="text-center fb-sl fw-light text-capitalize main-color"></div>   
+                    <div id="userName" class="text-white  fh-ml mb-2"></div>
+                    <div id="userEmail" class="sec-color fh-xsm fw-light mb-1"></div>
+                    <div id="userType" class="fb-sl fw-light text-capitalize main-color"></div>   
                     </div>  
-                    <div class="bg-form py-3 rounded-3 mt-4">
+                    <div class="bg-form py-4 px-3 rounded-3 mt-4">
+                       <h6 class="text-white fb-ml mb-3 opacity-75">Membership & Billing</h6>
+                       <div class="text-secondary small fw-light mb-1"><a href="#" id='changeEmailLink' class="text-reset">Change account Email</a></div>
+                       
+                    </div>            
+                    
+                    
+                
+                
 
-                    </div>              
                  </div>
                  
               </div>
@@ -94,6 +101,19 @@
           </div>
         </div>
     </div>
+
+    <div id="changeEmail" class="w-100 vh-100 modelBg d-flex justify-content-center align-items-center position-fixed top-0 d-none">
+      <i class="fa-regular fa-circle-xmark fa-2x  align-self-start position-absolute closeIcon"></i> 
+      <div class="bg-form signupWidth mx-auto mt-5 p-5 rounded-4" >
+        <div class="fh-l text-white mb-2">Change Email</div>
+        <div class="mb-4 position-relative">
+          <input type="email" class="form-control form-control-lg" id="userChangeEmail" placeholder="Change Email">
+        </div>
+        <div class="mb-4 pt-3">
+          <button class="idle-btn w-100  fb-ml  py-2" id="changeEmailBtn">Change Email</button>
+        </div>
+      </div>
+     </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js" type="module"></script>

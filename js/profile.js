@@ -5,11 +5,25 @@ export function displayProfile(){
     const userEmail=document.querySelector('#userEmail');
     const userType=document.getElementById('userType')
     const user=JSON.parse(localStorage.getItem('user'));
+    const changeEmailBlock=document.querySelector('#changeEmail');
+    const changeEmailLink=document.querySelector('#changeEmailLink');
+    const closeIcon=document.querySelector('.closeIcon');
+    const changeEmailBtn=document.querySelector('#changeEmailBtn');
     userName.innerHTML=(user.name)?user.name:'UserName';
     userEmail.innerHTML=(user.email)?user.email:'example@info.com';
     userType.innerHTML=(user.type)?user.type:'Regular';
 
 
+    changeEmailLink.addEventListener('click',(e)=>{
+        e.preventDefault();
+        changeEmailBlock.classList.remove('d-none');
+    })
 
+    closeIcon.addEventListener('click',()=>{
+        changeEmailBlock.classList.add('d-none');
+    })
+    changeEmailBtn.addEventListener('click',(e)=>{
+        console.log('shaimaa');
+    })
 }
 
