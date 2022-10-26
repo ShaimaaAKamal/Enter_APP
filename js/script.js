@@ -5,6 +5,7 @@ import { displayMovies } from "./movies.js";
 import { displaySeries } from "./series.js";
 import { signUp } from "./signUp.js";
 import { checkLogging } from "./checkLogging.js";
+import { displayProfile } from "./profile.js";
 
 const page=(localStorage.getItem('page'))?JSON.parse(localStorage.getItem('page')):'';
 let check=false;
@@ -22,7 +23,8 @@ switch(page){
     case 'bookmarked': displayBookmarked();
     check =true;
     break;
-    case 'profile':  check =true;;
+    case 'profile':  displayProfile();
+    check =true;;
     break;
     case 'signUP': signUp();
     break;

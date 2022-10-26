@@ -7,6 +7,7 @@ const validation=new Validation();
 const clearInputs=new ClearInputs();
 const signUpBtn=document.querySelector('#signUpBtn');
 const userEmail=document.querySelector('#userEmail');
+const userName=document.querySelector('#userName');
 const userPassword=document.querySelector('#userPassword');;
 const userConfirmPassword=document.querySelector('#userConfirmPassword');
 const existed=document.getElementById('existed');
@@ -20,14 +21,15 @@ function handleSignUp(){
     if(!existed.classList.contains('d-none'))  existed.classList.add('d-none');
     const password=userPassword.value;
     const email=userEmail.value;
+    const name=userName.value;
     const repeatPassword=userConfirmPassword.value;
-   if(validation.formValidate(userEmail,userPassword,clearInputs.clearValidInputs,clearInputs.createInvalidMessage,userConfirmPassword)){
+   if(validation.formValidate(userEmail,userPassword,clearInputs.clearValidInputs,clearInputs.createInvalidMessage,userConfirmPassword,userName)){
       if(confirmPassword(password,repeatPassword))
        {
          const existedUser= users.filter(user=>user.email === email);
          if(existedUser.length === 0){
             users.push({
-                email,password,data,id:users.length+1,type:'regular'
+                name,email,password,data,id:users.length+1,type:'regular'
             });
             localStorage.setItem('users',JSON.stringify(users));
             window.location.replace(`login.html`);
