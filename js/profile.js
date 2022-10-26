@@ -22,6 +22,7 @@ export function displayProfile(){
     const closePasswordIcon=document.querySelector('.closePasswordIcon');
     const changeEmailBtn=document.querySelector('#changeEmailBtn');
     const changePasswordBtn=document.querySelector('#changePasswordBtn');
+    const alreadyWatching=document.querySelector('#alreadyWatching');
 
     userName.innerHTML=(user.name)?user.name:'UserName';
     userEmail.innerHTML=(user.email)?user.email:'example@info.com';
