@@ -1,9 +1,4 @@
 
-
-
-
-
-
 export function checkLogging(){
 const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
 const userImage=document.querySelector('#userImage');

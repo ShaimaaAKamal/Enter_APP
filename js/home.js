@@ -1,6 +1,6 @@
 
 import { CreateElemnts } from "./modules/Validation/createElements.js";
-import { General } from "./modules/generalModule.js";
+import { General } from "./modules/GeneralModule.js";
 import { Search } from "./modules/SearchModule.js";
 
 export function displayHome(){

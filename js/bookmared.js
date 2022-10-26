@@ -1,5 +1,5 @@
 import { Search } from "./modules/SearchModule.js";
-import { General } from "./modules/generalModule.js";
+import { General } from "./modules/GeneralModule.js";
 
 export function displayBookmarked(){
 const search=document.getElementById('Search');
