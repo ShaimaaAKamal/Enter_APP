@@ -12,11 +12,12 @@ a{
     text-decoration: none;
 }
 .menu{
+    margin-left:-1.6%;
     z-index:2;
-    height: 100px;
+    height: 80px;
 }
 .main{
-    transform: translateY(90px);
+    transform: translateY(80px);
 }
 
 .userIcon,.logoutIcon{
@@ -153,14 +154,6 @@ stroke:var(--darkColor) !important;
     background-color: #141D30;
 }
 
-/* #Search{
-    height: 100px;
-} */
-
-
-/* .mainBody{
-    transform: translateY(50px);
-} */
 #Search .form-control::placeholder,#Search .form-control{
     font-size: 1.25rem;
 }
@@ -220,6 +213,11 @@ stroke:var(--darkColor) !important;
     width:60%;
 }
 
+@media screen and (min-width:567px){
+    .main{
+        transform: translateY(100px);
+    }
+    }
 
 @media screen and (min-width:768px){
     .owl-item img{
@@ -227,6 +225,10 @@ stroke:var(--darkColor) !important;
         object-fit: cover;
     }
    
+    .main{
+        transform: translateY(120px);
+    }
+    
     
 }
 
@@ -251,6 +253,7 @@ stroke:var(--darkColor) !important;
   
      .menu{
         height: auto;
+        margin-left: auto;
      }
     .main{
         transform: translateX(calc(100vw / 12)) translateY(0);
