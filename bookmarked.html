@@ -80,27 +80,33 @@
           </span>
           <input type="text" class="form-control border-0" placeholder="Search for bookmarked Shows" aria-label="Search" aria-describedby="basic-addon1">
         </section>
-        <section id="emptyBookmarked" class="d-none">
-          <div class="text-center d-flex flex-column bookmarK justify-content-end">
-            <i class="fa-regular fa-bookmark fa-5x main-color"></i>
-            <!-- <p class="mb-0 text-secondary  mt-3 fs-2 fw-light">No Bookmarked</p> -->
-            <p class="mb-0 text-white mt-4 fh-ml  fw-light"><a href="index.html" class="text-reset">Browse Latest Trends</a></p>
-          </div>
-        </section>
-        <section id="bookmarked" class="mt-5 d-none">
-          <div id="bookmarkMoviesParent" class="d-none">
-            <h3 class="fh-l fw-light text-white mb-4 py-2" >Bookmarked Movies</h3>
-            <div class="row gy-3" id="bookmarkMovies">
-             
+        <div id='searchResult' class="my-3 text-white fh-ml d-none py-2"></div>
+        <div class="row gy-3"  id="searchBody" class="d-none">
+        </div>
+        
+        <div class="mainBody">
+          <section id="emptyBookmarked" class="d-none">
+            <div class="text-center d-flex flex-column bookmarK justify-content-end">
+              <i class="fa-regular fa-bookmark fa-5x main-color"></i>
+              <p class="mb-0 text-white mt-4 fh-ml  fw-light"><a href="index.html" class="text-reset">Browse Latest Trends</a></p>
             </div>
-          </div>
-           <div id="bookmarkSeriesParent" class="d-none">
-            <h3 class="fh-l fw-light text-white my-4 py-2" >Bookmarked TV Series</h3>
-            <div class="row gy-3" id="bookmarkSeries">
-              
+          </section>
+          <section id="bookmarked" class="mt-5 d-none">
+            <div id="bookmarkMoviesParent" class="d-none">
+              <h3 class="fh-l fw-light text-white mb-4 py-2" >Bookmarked Movies</h3>
+              <div class="row gy-3" id="bookmarkMovies">
+               
+              </div>
             </div>
-           </div>
-        </section>
+             <div id="bookmarkSeriesParent" class="d-none">
+              <h3 class="fh-l fw-light text-white my-4 py-2" >Bookmarked TV Series</h3>
+              <div class="row gy-3" id="bookmarkSeries">
+                
+              </div>
+             </div>
+          </section>
+        </div>
+      
       </main>
     </div>
   </div>

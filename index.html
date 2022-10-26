@@ -77,13 +77,18 @@
           </span>
           <input type="text" class="form-control border-0" placeholder="Search for movies or TV series" aria-label="Search" aria-describedby="basic-addon1">
         </section>
-        <section id="trending" >
-          <h3 class="fh-l fw-light text-white mb-4 py-2">Trending</h3>
-        </section>
-        <section id="recommend" class="mt-5">
-          <h3 class="fh-l fw-light text-white mb-4 py-2">Recommended for you</h3>
-          <div class="row gy-3" id="recommendCards"></div>
-        </section>
+        <div id='searchResult' class="my-3 text-white fh-ml d-none"></div>
+        <div class="row gy-3"  id="searchBody" class="d-none">
+        </div>
+        <div class="mainBody">
+          <section id="trending" >
+            <h3 class="fh-l fw-light text-white mb-4 py-2">Trending</h3>
+          </section>
+          <section id="recommend" class="mt-5">
+            <h3 class="fh-l fw-light text-white mb-4 py-2">Recommended for you</h3>
+            <div class="row gy-3" id="recommendCards"></div>
+          </section>
+        </div>
       </main>
     </div>
   </div>

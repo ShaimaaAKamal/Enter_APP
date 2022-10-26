@@ -6,7 +6,6 @@ import { displaySeries } from "./series.js";
 import { signUp } from "./signUp.js";
 import { checkLogging } from "./checkLogging.js";
 
-
 const page=(localStorage.getItem('page'))?JSON.parse(localStorage.getItem('page')):'';
 let check=false;
 
@@ -34,5 +33,6 @@ switch(page){
 
 
 if(check)  checkLogging();
+
 
 

@@ -1,9 +1,11 @@
 
 import { CreateElemnts } from "./modules/Validation/createElements.js";
 import { General } from "./modules/generalModule.js";
+import { Search } from "./modules/SearchModule.js";
 
 export function displayHome(){
-    
+const SearchClass=new Search();
+const search=document.getElementById('Search');
 const trendBlock=document.getElementById('trending');
 const recommendCards=document.getElementById('recommendCards');
 const createElemnts=new CreateElemnts();
@@ -20,5 +22,9 @@ async function buildTrend(){
 }
 buildTrend();
 
-general.displayCards(general.getData('isTrending',false),recommendCards)
+general.displayCards(general.getData('isTrending',false),recommendCards);
+
+search.addEventListener('keyup',(e)=>{
+    SearchClass.handleSearch(e,general.retrieveData());
+})
 }

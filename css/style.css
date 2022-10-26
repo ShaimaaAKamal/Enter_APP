@@ -143,6 +143,15 @@ stroke:var(--darkColor) !important;
 .aside{
     background-color: #141D30;
 }
+
+/* #Search{
+    height: 100px;
+} */
+
+
+/* .mainBody{
+    transform: translateY(50px);
+} */
 #Search .form-control::placeholder,#Search .form-control{
     font-size: 1.25rem;
 }

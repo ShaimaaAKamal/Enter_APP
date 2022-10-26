@@ -1,7 +1,9 @@
+import { Search } from "./modules/SearchModule.js";
 import { General } from "./modules/generalModule.js";
 
 export function displayBookmarked(){
-
+const search=document.getElementById('Search');
+const SearchClass=new Search();
 const general=new General();
 const emptyBookmarkedElement=document.querySelector('#emptyBookmarked');
 const bookmarkedElement=document.querySelector('#bookmarked');
@@ -38,6 +40,10 @@ if(bookmarked.length !== 0){
         general.hideElement(bookmarkMoviesParent);
         general.displayCards(bookmarkedSeries,bookmarkSeriesElement);
     }
+
+    search.addEventListener('keyup',(e)=>{
+        SearchClass.handleSearch(e,general.getData('isBookmarked',true));
+    })
 
 }
 else{

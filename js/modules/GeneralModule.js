@@ -15,6 +15,8 @@ export class General{
     return displayedData;
    }
 
+
+
    getData(key,searchKey){
     const displayedData=this.retrieveData();
     const category=this.filterData(displayedData,key,searchKey)
