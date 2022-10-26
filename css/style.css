@@ -12,7 +12,8 @@ a{
     text-decoration: none;
 }
 .menu{
-    margin-left:-1.6%;
+    /* margin-left:-2; */
+    right:.2%;
     z-index:2;
     height: 80px;
 }
@@ -252,6 +253,8 @@ stroke:var(--darkColor) !important;
 
   
      .menu{
+        right: unset;
+        /* left:0; */
         height: auto;
         margin-left: auto;
      }
