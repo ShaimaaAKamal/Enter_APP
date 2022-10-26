@@ -3,6 +3,7 @@ import {ClearInputs} from './modules/Validation/clearModule.js';
 
 const validate=new Validation();
 const clearInputs=new ClearInputs();
+const existed=document.getElementById('existed');
 const user=JSON.parse(localStorage.getItem('user'));
 const users=JSON.parse(localStorage.getItem('users'));
 
@@ -61,20 +62,62 @@ function changeEmail(changeEmailBlock){
    const newEmail=userChangeEmailInput.value
          if(validate.validateEmail(newEmail)){
             clearInputs.clearValidInputs(userChangeEmailInput);
-            user.email=newEmail;
-            users[user.id-1]=user;
+            updateUser('email',newEmail);
             userEmail.innerHTML=newEmail;
-            localStorage.setItem('user',JSON.stringify(user));
-            localStorage.setItem('users',JSON.stringify(users));
             changeEmailBlock.classList.add('d-none');
          }
          else{
             clearInputs.createInvalidMessage(newEmail,userChangeEmailInput,'E-mail is invalid') 
          }
+
+         userChangeEmailInput.addEventListener('focus',(e)=>{
+            clearInputs. clearValidInputs(e.target);
+        });
 }
 
 function changePassword(changePasswordBlock){
-    const oldPassword=document.getElementById('oldPassword').value;
-    const newPassword=document.getElementById('newPassword').value;
-    const newConfirmPassword=document.getElementById('newConfirmPassword').value;
+    if(!existed.classList.contains('d-none'))  existed.classList.add('d-none');
+    const oldPasswordInput=document.getElementById('oldPassword');
+    const newPasswordInput=document.getElementById('newPassword');
+    const newConfirmPasswordInput=document.getElementById('newConfirmPassword');
+    const validOld=validate.validationMsg(validate.validatePassword(oldPassword.value),oldPasswordInput.value,oldPasswordInput,'password');
+    const validNew=validate.validationMsg(validate.validatePassword(newPasswordInput.value),newPasswordInput.value,newPasswordInput,'password');
+    const validConfirm=validate.validationMsg(validate.validatePassword(newConfirmPasswordInput.value),newConfirmPasswordInput.value,newConfirmPasswordInput,'password');
+
+ if(validOld & validNew & validConfirm){
+       if(user.password === oldPasswordInput.value){
+         if(newPasswordInput.value ===newConfirmPasswordInput.value){
+            updateUser('password',newPasswordInput.value);
+            changePasswordBlock.classList.add('d-none');
+         }
+         else{
+            clearInputs.createInvalidMessage(newPasswordInput.value,newPasswordInput,`Password doesn't much`);
+            clearInputs.createInvalidMessage(newConfirmPasswordInput.value,newConfirmPasswordInput,`Password doesn't much`);
+         }
+       }
+       else{
+        existed.classList.remove('d-none');
+       }
+
+    }
+   
+
+
+    oldPasswordInput.addEventListener('focus',(e)=>{
+        if(!existed.classList.contains('d-none'))  existed.classList.add('d-none');
+        clearInputs. clearValidInputs(e.target);
+    });
+    newPasswordInput.addEventListener('focus',(e)=>{
+        clearInputs. clearValidInputs(e.target);
+    });
+    newConfirmPasswordInput.addEventListener('focus',(e)=>{
+        clearInputs. clearValidInputs(e.target);
+    });
+}
+
+function updateUser(key,value){
+    user[key]=value;
+    users[user.id-1]=user;
+    localStorage.setItem('user',JSON.stringify(user));
+    localStorage.setItem('users',JSON.stringify(users));
 }

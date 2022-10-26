@@ -95,6 +95,14 @@
             
                  </div>
                  
+                 <div class="col-lg-9">
+                    <div class="bg-form text-center py-3 rounded-3">
+                      <div class="row" id="profileBookMarked">
+                       
+                      </div> 
+                    </div>
+                 </div>
+                 
               </div>
             </main>
           </div>
@@ -116,6 +124,7 @@
      <div id="changePassword" class="w-100 vh-100 modelBg d-flex justify-content-center align-items-center position-fixed top-0 d-none">
       <i class="fa-regular fa-circle-xmark fa-2x  align-self-start position-absolute closeIcon closePasswordIcon"></i> 
       <div class="bg-form signupWidth mx-auto mt-5 p-5 rounded-4" >
+        <div class="alert bg-site text-center text-white mb-3 d-none fb-ml" id="existed">Your Old Password is Wrong</div>
         <div class="fh-l text-white mb-2">Change Password</div>
         <div class="mb-4 position-relative">
           <input type="password" class="form-control form-control-lg" id="oldPassword" placeholder="Old Password">

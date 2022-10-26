@@ -22,7 +22,7 @@ function handleLogin(){
     if(!existed.classList.contains('d-none'))  existed.classList.add('d-none');
       const password=userPassword.value;
       const email=userEmail.value;
-      if(validation.formValidate(userEmail,userPassword,clearInputs.clearValidInputs,clearInputs.createInvalidMessage)){
+      if(validation.formValidate(userEmail,userPassword)){
         const existedUser= users.find(user=>user.email === email);
         if(!existedUser){
             clearInputs.createInvalidMessage(email,userEmail,`This Email isn't exist`);

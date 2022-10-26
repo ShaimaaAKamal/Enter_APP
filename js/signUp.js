@@ -23,7 +23,7 @@ function handleSignUp(){
     const email=userEmail.value;
     const name=userName.value;
     const repeatPassword=userConfirmPassword.value;
-   if(validation.formValidate(userEmail,userPassword,clearInputs.clearValidInputs,clearInputs.createInvalidMessage,userConfirmPassword,userName)){
+   if(validation.formValidate(userEmail,userPassword,userConfirmPassword,userName)){
       if(confirmPassword(password,repeatPassword))
        {
          const existedUser= users.filter(user=>user.email === email);
