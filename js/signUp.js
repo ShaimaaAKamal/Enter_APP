@@ -62,4 +62,8 @@ userPassword.addEventListener('focus',(e)=>{
 userConfirmPassword.addEventListener('focus',(e)=>{
     clearInputs.clearValidInputs(e.target);
 })
+
+userName.addEventListener('focus',(e)=>{
+    clearInputs.clearValidInputs(e.target);
+})
 }
