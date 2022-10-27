@@ -6,6 +6,17 @@ export class CreateElemnts{
     createTrendings(trend,type){
         const parentDiv= this.createInfoPart(trend,'trend');
         parentDiv.appendChild(this.createInfo(trend,'trend'));
+        if(logged){
+            parentDiv.addEventListener('click',function(e){
+                const general=new General();
+                const title=this.children[0].alt;
+                const watching =general.getData('title',title)[0];
+                if(general.filterData(alreadyWatching,'title',title).length === 0){
+                    alreadyWatching.push(watching);
+                    localStorage.setItem('alreadyWatching',JSON.stringify(alreadyWatching));
+                };
+             });
+        }
         return parentDiv;
     }
 
@@ -26,7 +37,6 @@ export class CreateElemnts{
                     localStorage.setItem('alreadyWatching',JSON.stringify(alreadyWatching));
                 };
              });
-             console.log(alreadyWatching);
         }
         return parentDiv;
     }

@@ -20,8 +20,8 @@
   </script>
 </head>
 <body class="bg-bk">
-    <div class="container-fluid p-4 pt-0 pt-lg-4">
-        <div class="row g-3 gx-lg-4">
+    <div class="container-fluid p-4 pt-0 pt-lg-4 pb-lg-0 bg-success">
+        <div class="row g-3 gx-lg-4 bg-warning">
           <div class="col-lg-1 position-fixed menu">
             <aside class="row bg-form align-items-center align-items-lg-start py-3 py-lg-4 px-3 px-lg-0  gx-0 justify-content-lg-center justify-content-around rounded-4">
             <div class="col-lg-8 col-11 ">
@@ -72,39 +72,31 @@
              </div>
             </aside>
           </div>
-          <div class="col-lg-11 main">
-            <main class="py-lg-1  py-2">
-              <div class="row gy-3">
-                <div class="col-lg-8 col-xl-9" id="profileCards">
-                  <div class="bg-form text-center py-3 rounded-3">
-                    <div class="row" id="alreadyWatching">
-                          
-                    </div> 
-                  </div>
-               </div>
-                <div class='col-lg-4 col-xl-3 d-flex flex-column' id="profileInfo">
+          <div class="col-lg-11 main" id="profileMain">
+            <!-- <main class="py-lg-0  py-2" id="profileMain"> -->
+              <main class="py-lg-0  py-2">
+              <div class="row gy-3 gx-5">
+              <div class='col-lg-4 col-xl-3 d-flex flex-column' id="profileInfo">
                   <div class="bg-form text-center py-3 rounded-3">
                   <div class="pt-2">
-                      <img src="assets/image-avatar.png" alt="UserImage" class="me-3 mb-2">
+                      <img src="assets/image-avatar.png" alt="UserImage" class="me-3 mb-1">
                   </div>
-                  <div id="userName" class="text-white  fh-ml mb-3"></div>
+                  <div id="userName" class="text-white  fh-ml mb-1"></div>
                   <div id="userEmail" class="sec-color fh-xsm fw-light mb-1"></div>
                   <div id="userType" class="fb-sl fw-light text-capitalize main-color"></div>   
                   </div>  
-                  <div class="bg-form p-4 rounded-3 mt-4" id="settings">
+                  <div class="bg-form p-4 pt-4 pb-3 rounded-3 mt-3" id="settings">
                      <div>
                         <h6 class="mai fb-ml main-color mb-2 ">Membership & Billing</h6>
                         <div class="text-secondary  small fw-light mb-1"><a href="#" id='changePasswordLink' class="text-reset">Change Account Password</a></div>
                         <div class="text-secondary  small fw-light mb-1"><a href="#" id='changePhone' class="text-reset">Change Account Phone</a></div>
                         <div class="text-secondary  small fw-light mb-1 "><a href="#" id='changeEmailLink' class="text-reset">Change Account Email</a></div>
                         <div class="text-secondary  small fw-light mb-1 "><a href="#" id='changeEmailLink' class="text-reset">Update Payment Info</a></div>
-                        <div class="text-secondary  small fw-light mb-1 "><a href="#" id='changeEmailLink' class="text-reset">Redeem gift card/Promo code</a></div>
                         <div class="text-secondary  small fw-light mb-1 "><a href="#" id='changeEmailLink' class="text-reset">Cancal Membership</a></div>
                      </div>
                      <div>
                         <h6 class="mai fb-ml main-color mb-2 mt-3 ">Plan Details</h6>
                         <div class="text-secondary  small fw-light mb-1"><a href="#"  class="text-reset">Change Plan</a></div>
-                        <div class="text-secondary  small fw-light mb-1"><a href="#"  class="text-reset">Add DVD Plan</a></div>
                      </div>
                      <div>
                         <h6 class="mai fb-ml main-color mb-2 mt-3 ">Setting</h6>
@@ -119,6 +111,22 @@
                         <div class="text-secondary  small fw-light "><a href="#"  class="text-reset">Playback settings</a></div>
                      </div>
                   </div>   
+               </div>
+                <div class="col-lg-8 col-xl-9 bg-danger" id="profileCards">
+                  <div class="bg-form py-3 px-4 rounded-3 h-100">
+                    <h3 class="fh-ml fw-light text-white mb-4 py-2">Already Watching</h3>
+                    <section id="emptyWatched" >
+                      <div class="text-center d-flex flex-column bookmarK justify-content-lg-end justify-content-center">
+                        <a href="index.html">  
+                            <i class="fa-solid fa-clapperboard fa-5x main-color"" ></i>
+                        </a>
+                      </div>
+                    </section>
+                    <section>
+                      <div class="row gy-3 d-none" id="alreadyWatching">
+                      </div>
+                    </section>
+                  </div>
                </div>
               </div>
             </main>

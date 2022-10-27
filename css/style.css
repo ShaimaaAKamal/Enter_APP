@@ -8,6 +8,11 @@
 html{
     font-size:16px;
 }
+
+.container-fluid{
+    padding-left:12px !important;
+    padding-right:12px !important;
+}
 a{
     text-decoration: none;
 }
@@ -18,7 +23,9 @@ a{
     height: 80px;
 }
 .main{
-    transform: translateY(80px);
+    /* transform: translateY(80px); */
+    margin-top:80px;
+
 }
 
 .userIcon,.logoutIcon{
@@ -224,8 +231,14 @@ stroke:var(--darkColor) !important;
 
 @media screen and (min-width:567px){
     .main{
-        transform: translateY(100px);
+        /* transform: translateY(100px); */
+        margin-top:100px;
     }
+
+    #profileMain{
+        margin-top:80px;
+    }
+    
     }
 
 @media screen and (min-width:768px){
@@ -235,7 +248,12 @@ stroke:var(--darkColor) !important;
     }
 
     .main{
-        transform: translateY(120px);
+        /* transform: translateY(120px); */
+        margin-top:120px;
+    }
+
+    #profileMain{
+        margin-top:80px;
     }
     
     
@@ -265,7 +283,10 @@ stroke:var(--darkColor) !important;
         margin-left: auto;
      }
     .main{
-        transform: translateX(calc(100vw / 12)) translateY(0);
+        /* transform: translateX(calc(100vw / 12)) translateY(0); */
+        margin-left:calc((100vw / 12));
+        margin-top:1rem;
+
     }
 
     #settings{
@@ -275,14 +296,26 @@ stroke:var(--darkColor) !important;
     #profileInfo{
         position: fixed;
         height: 95vh;
-        right:0;
+        /* height: 100%; */
+        /* right:0; */
+    }
+    #profileCards{
+       min-height:95vh; 
+       margin-left:calc((100vw / 3 ) - 2rem);
     }
 
+    /* #profileMain{
+        margin-left:calc((100vw / 12) - .75rem);
+    } */
+  
 }
 
 @media screen and (min-width:1200px){
     .signupWidth,.loginWidth{
         width:30%;
     }   
+    #profileCards{
+        margin-left:calc((100vw / 4 ) - 2rem);
+     }
 }
 

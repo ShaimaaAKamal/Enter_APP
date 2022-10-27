@@ -1,5 +1,6 @@
 import {Validation} from './modules/Validation/validate.js';
 import {ClearInputs} from './modules/Validation/clearModule.js';
+import {displayAlreadyWatching} from './alreadyWatching.js'
 
 const validate=new Validation();
 const clearInputs=new ClearInputs();
@@ -27,7 +28,8 @@ export function displayProfile(){
     userName.innerHTML=(user.name)?user.name:'UserName';
     userEmail.innerHTML=(user.email)?user.email:'example@info.com';
     userType.innerHTML=(user.type)?user.type:'Regular';
-
+    
+    displayAlreadyWatching();
 
     changeEmailLink.addEventListener('click',(e)=>{
         e.preventDefault();
