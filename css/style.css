@@ -214,6 +214,14 @@ stroke:var(--darkColor) !important;
     width:60%;
 }
 
+#settings{
+    display:none;
+}
+
+#profileInfo{
+    order:-1;
+}
+
 @media screen and (min-width:567px){
     .main{
         transform: translateY(100px);
@@ -225,7 +233,7 @@ stroke:var(--darkColor) !important;
         min-height: 200px;
         object-fit: cover;
     }
-   
+
     .main{
         transform: translateY(120px);
     }
@@ -250,18 +258,26 @@ stroke:var(--darkColor) !important;
     .AvaterWidth{
         width:90%;
     }
-
   
      .menu{
         right: unset;
-        /* left:0; */
         height: auto;
         margin-left: auto;
      }
     .main{
         transform: translateX(calc(100vw / 12)) translateY(0);
     }
-  
+
+    #settings{
+        display:block;
+    }
+
+    #profileInfo{
+        position: fixed;
+        height: 95vh;
+        right:0;
+    }
+
 }
 
 @media screen and (min-width:1200px){

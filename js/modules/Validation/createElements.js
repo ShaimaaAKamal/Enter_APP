@@ -1,3 +1,6 @@
+import { General } from "../GeneralModule.js";
+let alreadyWatching=localStorage.getItem('alreadyWatching')?JSON.parse(localStorage.getItem('alreadyWatching')):[];
+const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
 export class CreateElemnts{
 
     createTrendings(trend,type){
@@ -13,6 +16,18 @@ export class CreateElemnts{
         parentDiv.appendChild(child1);
         parentDiv.appendChild(this.createInfo(trend,'recommend'));
         parentDiv.appendChild(this.createTitle(trend,'fh-xsm'));
+        if(logged){
+            parentDiv.addEventListener('click',function(e){
+                const general=new General();
+                const title=this.children[0].children[0].alt;
+                const watching =general.getData('title',title)[0];
+                if(general.filterData(alreadyWatching,'title',title).length === 0){
+                    alreadyWatching.push(watching);
+                    localStorage.setItem('alreadyWatching',JSON.stringify(alreadyWatching));
+                };
+             });
+             console.log(alreadyWatching);
+        }
         return parentDiv;
     }
      
@@ -39,6 +54,8 @@ export class CreateElemnts{
         else
         img.setAttribute('src',trend.thumbnail.regular.medium);
         img.classList.add('w-100', 'rounded-3');
+
+       
         return img;
     }
 
