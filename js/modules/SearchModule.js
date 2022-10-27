@@ -10,7 +10,7 @@ export class Search{
         const searchValue=e.target.value;
         if(searchValue !== '')
         {
-            const find=data.filter(entry=> entry['title'].toLocaleLowerCase().includes(searchValue) );
+            const find=data.filter(entry=> entry['title'].toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) );
             searchBody.innerHTML='';
             searchResult.classList.remove('d-none');
     
