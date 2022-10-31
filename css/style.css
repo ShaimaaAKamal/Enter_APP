@@ -9,10 +9,10 @@ html{
     font-size:16px;
 }
 
-.container-fluid{
+/* .container-fluid{
     padding-left:12px !important;
     padding-right:12px !important;
-}
+} */
 a{
     text-decoration: none;
 }
@@ -293,6 +293,9 @@ stroke:var(--darkColor) !important;
         margin-top:1rem;
     }
     
+    #changePassword,#changeEmail{
+        z-index:10000;
+    }
 
     #settings{
         display:block;
@@ -301,17 +304,16 @@ stroke:var(--darkColor) !important;
     #profileInfo{
         position: fixed;
         height: 95vh;
-        /* height: 100%; */
-        /* right:0; */
+      
     }
     #profileCards{
        min-height:95vh; 
-       margin-left:calc((100vw / 3 ) - 2rem);
+       /* margin-left:calc((100vw / 3 ) - 2rem); */
+
+       margin-left:calc((100vw / 3 ) - 1.5rem);
     }
 
-    /* #profileMain{
-        margin-left:calc((100vw / 12) - .75rem);
-    } */
+   
   
 }
 
@@ -321,6 +323,8 @@ stroke:var(--darkColor) !important;
     }   
     #profileCards{
         margin-left:calc((100vw / 4 ) - 2rem);
+
+        /* margin-left:calc((100vw / 4 ) - 1.5rem); */
      }
 }
 
