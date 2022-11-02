@@ -28,9 +28,9 @@ export class CreateElemnts{
      createRecommend(trend,type=''){
         const parentDiv=document.createElement('div');
         if(type === 'alreadyWatching')
-        parentDiv.classList.add('col-lg-4','col-sm-6');
+        parentDiv.classList.add('col-lg-4','col-sm-6','cardR');
         else
-        parentDiv.classList.add('col-lg-3', 'col-md-4','col-sm-6');
+        parentDiv.classList.add('col-lg-3', 'col-md-4','col-sm-6','cardR');
         const child1=this.createInfoPart(trend,'recommend');
         parentDiv.appendChild(child1);
         parentDiv.appendChild(this.createInfo(trend,'recommend'));

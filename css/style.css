@@ -113,7 +113,6 @@ a{
 }
 
 
-
 .idle-bookmark,.idle-bookmark:active{
    background-color: var(--bookmarkColor);
    color:#fff;
@@ -174,6 +173,8 @@ stroke:var(--darkColor) !important;
     top:1rem;
     z-index:3
 }
+
+
 
 .heading-position{
     left:.7rem;
@@ -238,6 +239,14 @@ bottom:0;
 align-items: center;
 justify-content: center;
 display:none;
+}
+.cardR {
+    position: relative;
+    transition: all 1s;
+}
+.cardR:hover{
+    z-index:4;
+    transform: scale(1.1);
 }
 .trend:hover .play{
     display: flex;
