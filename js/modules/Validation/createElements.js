@@ -1,4 +1,5 @@
 import { General } from "../GeneralModule.js";
+import { displayBookmarked } from "../../bookmared.js";
 
 
 const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
@@ -9,7 +10,6 @@ export class CreateElemnts{
         parentDiv.appendChild(this.createInfo(trend,'trend'));
         if(logged){
             parentDiv.addEventListener('click',function(e){
-                console.log('trendClick')
                 const general=new General();
                 const title=this.children[0].alt;
                 const watching =general.getData('title',title)[0];
@@ -37,7 +37,6 @@ export class CreateElemnts{
         parentDiv.appendChild(this.createTitle(trend,'fh-xsm'));
         if(logged){
             parentDiv.addEventListener('click',function(e){
-                console.log('Recommend Click')
                 const general=new General();
                 const title=this.children[0].children[0].alt;
                 const watching =general.getData('title',title)[0];
@@ -103,13 +102,15 @@ export class CreateElemnts{
             <path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" />
           </svg>`;
        
-        const user=localStorage.getItem('user')?JSON.parse(localStorage.getItem('user')):false;
-        if(user){
-            const users=localStorage.getItem('users')?JSON.parse(localStorage.getItem('users')):[];
+        const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
+         if(logged){
             if(trend.isBookmarked){
                 div.children[0].children[0].style.fill='#fff';
             }
             div.addEventListener('click',function(e){
+                const users=localStorage.getItem('users')?JSON.parse(localStorage.getItem('users')):[];
+                const user=localStorage.getItem('user')?JSON.parse(localStorage.getItem('user')):false;
+               const page=localStorage.getItem('page')?JSON.parse(localStorage.getItem('page')):'';
                 e.stopPropagation();
                 const path=this.children[0].children[0];
                 const trendIndex = user.data.findIndex(function(entry){
@@ -117,7 +118,7 @@ export class CreateElemnts{
                  });
                 if(path.style.fill)
                    {  path.style.fill=null;
-                    trend.isBookmarked=false;
+                      trend.isBookmarked=false;
                    }
                 else
                   { path.style.fill='#fff';
@@ -127,6 +128,13 @@ export class CreateElemnts{
                    localStorage.setItem('user',JSON.stringify(user));
                    users[user.id-1]=user
                    localStorage.setItem('users',JSON.stringify(users));
+                   const bookmarkMoviesElement=document.querySelector('#bookmarkMovies');
+                   const bookmarkSeriesElement=document.querySelector('#bookmarkSeries');
+                   if(page === 'bookmarked'){
+                    bookmarkMoviesElement.innerHTML='';
+                    bookmarkSeriesElement.innerHTML='';
+                       displayBookmarked();
+                   }
 
         });}
        
