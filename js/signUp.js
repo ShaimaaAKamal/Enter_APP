@@ -29,7 +29,7 @@ function handleSignUp(){
          const existedUser= users.filter(user=>user.email === email);
          if(existedUser.length === 0){
             users.push({
-                name,email,password,data,id:users.length+1,type:'regular'
+                name,email,password,data,id:users.length+1,type:'regular',alreadyWatching:[]
             });
             localStorage.setItem('users',JSON.stringify(users));
             window.location.replace(`login.html`);

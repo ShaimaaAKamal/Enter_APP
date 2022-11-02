@@ -29,8 +29,11 @@ export class General{
     return category;
    }
 
-   displayCards(category,parentElement){
+   displayCards(category,parentElement,type=''){
     const createElemnts=new CreateElemnts();
+    if(type==='alreadyWatching')
+    category.forEach(trend => parentElement.appendChild(createElemnts.createRecommend(trend,'alreadyWatching')));
+    else
     category.forEach(trend => parentElement.appendChild(createElemnts.createRecommend(trend)));
    }
 

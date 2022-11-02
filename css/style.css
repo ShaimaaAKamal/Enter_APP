@@ -172,6 +172,7 @@ stroke:var(--darkColor) !important;
 .bookmark-position{
     right:1rem;
     top:1rem;
+    z-index:3
 }
 
 .heading-position{
@@ -229,6 +230,18 @@ stroke:var(--darkColor) !important;
     order:-1;
 }
 
+.play{z-index:2;
+top:0;
+left:0;
+right:0;
+bottom:0;
+align-items: center;
+justify-content: center;
+display:none;
+}
+.trend:hover .play{
+    display: flex;
+}
 @media screen and (min-width:567px){
     .main{
         /* transform: translateY(100px); */
@@ -306,6 +319,8 @@ stroke:var(--darkColor) !important;
         height: 95vh;
       
     }
+
+
     #profileCards{
        min-height:95vh; 
        /* margin-left:calc((100vw / 3 ) - 2rem); */

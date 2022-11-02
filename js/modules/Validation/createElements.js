@@ -1,5 +1,6 @@
 import { General } from "../GeneralModule.js";
-let alreadyWatching=localStorage.getItem('alreadyWatching')?JSON.parse(localStorage.getItem('alreadyWatching')):[];
+
+
 const logged=localStorage.getItem('logged')?JSON.parse(localStorage.getItem('logged')):false;
 export class CreateElemnts{
 
@@ -8,20 +9,27 @@ export class CreateElemnts{
         parentDiv.appendChild(this.createInfo(trend,'trend'));
         if(logged){
             parentDiv.addEventListener('click',function(e){
+                console.log('trendClick')
                 const general=new General();
                 const title=this.children[0].alt;
                 const watching =general.getData('title',title)[0];
+                const user=JSON.parse(localStorage.getItem('user'));
+                const alreadyWatching=user.alreadyWatching;
                 if(general.filterData(alreadyWatching,'title',title).length === 0){
                     alreadyWatching.push(watching);
-                    localStorage.setItem('alreadyWatching',JSON.stringify(alreadyWatching));
+                    user.alreadyWatching=alreadyWatching;
+                    localStorage.setItem('user',JSON.stringify(user));
                 };
              });
         }
         return parentDiv;
     }
 
-     createRecommend(trend){
+     createRecommend(trend,type=''){
         const parentDiv=document.createElement('div');
+        if(type === 'alreadyWatching')
+        parentDiv.classList.add('col-lg-4','col-sm-6');
+        else
         parentDiv.classList.add('col-lg-3', 'col-md-4','col-sm-6');
         const child1=this.createInfoPart(trend,'recommend');
         parentDiv.appendChild(child1);
@@ -29,12 +37,16 @@ export class CreateElemnts{
         parentDiv.appendChild(this.createTitle(trend,'fh-xsm'));
         if(logged){
             parentDiv.addEventListener('click',function(e){
+                console.log('Recommend Click')
                 const general=new General();
                 const title=this.children[0].children[0].alt;
                 const watching =general.getData('title',title)[0];
+                const user=JSON.parse(localStorage.getItem('user'));
+                const alreadyWatching=user.alreadyWatching;
                 if(general.filterData(alreadyWatching,'title',title).length === 0){
                     alreadyWatching.push(watching);
-                    localStorage.setItem('alreadyWatching',JSON.stringify(alreadyWatching));
+                    user.alreadyWatching=alreadyWatching;
+                    localStorage.setItem('user',JSON.stringify(user));
                 };
              });
         }
@@ -43,10 +55,24 @@ export class CreateElemnts{
      
     createInfoPart(trend,type){
         const div=document.createElement('div');
-        div.classList.add('position-relative', 'rounded-3');
+        div.classList.add('position-relative', 'rounded-3','trend');
         div.appendChild(this.createImageElement(trend,type));
         div.appendChild(this.createBookmarked(trend));
+        div.appendChild(this.createPlay());
         return div;
+    }
+
+    createPlay(){
+        const parentDiv=document.createElement('div');
+        parentDiv.classList.add('position-absolute','play');
+        const div=document.createElement('div');
+        div.classList.add('d-flex' ,'align-items-center' , 'bg-opacity-50' , 'bg-white' ,'py-2', 'rounded-5', 'px-3');
+        div.innerHTML=`<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 0C6.713 0 0 6.713 0 15c0 8.288 6.713 15 15 15 8.288 0 15-6.712 15-15 0-8.287-6.712-15-15-15Zm-3 21V8l9 6.5-9 6.5Z" fill="#FFF"/>
+      </svg>
+      <span class=" ms-3 me-2  text-white fh-xsm fw-normal">Play</span>`
+      parentDiv.appendChild(div);
+      return parentDiv;
     }
 
     createCarsouel(){
@@ -83,7 +109,8 @@ export class CreateElemnts{
             if(trend.isBookmarked){
                 div.children[0].children[0].style.fill='#fff';
             }
-            div.addEventListener('click',function(){
+            div.addEventListener('click',function(e){
+                e.stopPropagation();
                 const path=this.children[0].children[0];
                 const trendIndex = user.data.findIndex(function(entry){
                     return     entry.title=== trend.title
